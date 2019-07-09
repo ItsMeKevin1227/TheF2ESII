@@ -1,0 +1,9 @@
+<div class="add-mission">
+  <input
+    type="text"
+    v-model="missionText"
+    placeholder="add a new mission…"
+    @keyup.enter="addMission"
+  />
+  <span @click="addMission">+</span>
+</div>

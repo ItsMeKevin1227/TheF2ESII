@@ -1,0 +1,32 @@
+.add-mission {
+  position: relative;
+  width: 35%;
+  font-size: 16px;
+
+  input {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    color: @text-primary;
+    border: none;
+
+    &::placeholder {
+      color: @text-primary;
+      font-style: italic;
+      text-transform: uppercase;
+      font-weight: bold;
+      user-select: none;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    color: @text-primary;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+  }
+}
