@@ -1,0 +1,14 @@
+<div class="current-mission">
+  <div class="current-mission-information">
+    <span class="circle-48"></span>
+    <div class="mission-text">
+      <h1>{{ currentMission }}</h1>
+      <div class="mission-count">
+        <span v-for="(item,index) in 4" class="circle-12 done"></span>
+      </div>
+    </div>
+  </div>
+  <div class="current-mission-time">
+    {{ countdownTime }}
+  </div>
+</div>

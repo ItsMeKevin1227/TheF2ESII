@@ -1,0 +1,52 @@
+.current-mission {
+  display: flex;
+  flex-wrap: wrap;
+
+  .current-mission-information {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    color: @text-secondary;
+    text-transform: uppercase;
+    font-weight: bold;
+    user-select: none;
+    letter-spacing: 1px;
+  }
+
+  .mission-count {
+    display: flex;
+    margin-top: 8px;
+
+    span {
+
+      &.done {
+        background-color: @text-secondary;
+      }
+    }
+  }
+
+  h1 {
+    display: flex;
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .current-mission-time {
+    font-size: 11vw;
+    color: @text-primary;
+    text-transform: uppercase;
+    font-weight: bold;
+    user-select: none;
+    letter-spacing: 1px;
+  }
+
+  .circle-48 {
+    margin-right: 16px;
+    .circle-mixin(48px, 2px, @text-secondary)
+  }
+
+  .circle-12 {
+    margin-right: 8px;
+    .circle-mixin(12px, 2px, @text-secondary)
+  }
+}

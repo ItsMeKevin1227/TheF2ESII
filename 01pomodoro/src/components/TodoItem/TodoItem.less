@@ -1,0 +1,40 @@
+.todo-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+
+  p {
+    margin: 0;
+    color: @text-secondary;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .change-mission-button {
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      width: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 6.9px;
+      border-color: transparent transparent transparent @text-secondary;
+    }
+
+  }
+
+  .circle-20 {
+    margin-right: 4px;
+    .circle-mixin(20px, 2px, @text-secondary);
+  }
+
+  .circle-16 {
+    position: absolute;
+    right: 4px;
+    .circle-mixin(16px, 2px, @text-secondary);
+  }
+}

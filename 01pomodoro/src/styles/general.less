@@ -12,3 +12,18 @@
   box-sizing: border-box;
   outline: none;
 }
+
+li,
+ol {
+  list-style: none;
+
+}
+
+.circle-mixin(@x, @y, @z) {
+  display: block;
+  border-radius: 50%;
+  width: @x;
+  height: @x;
+  border: @y solid @z;
+  flex-shrink: 0;
+}
