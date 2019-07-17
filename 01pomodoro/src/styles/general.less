@@ -16,7 +16,14 @@
 li,
 ol {
   list-style: none;
+}
 
+a {
+  text-decoration: none;
+}
+
+path {
+  fill: inherit !important
 }
 
 .circle-mixin(@x, @y, @z) {
@@ -26,4 +33,45 @@ ol {
   height: @x;
   border: @y solid @z;
   flex-shrink: 0;
+}
+
+.shared-transformation {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    background-color: transparent;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: -0.4em;
+    left: -0.5em;
+    border-radius: 50%;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  &:hover {
+    &::before {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &:active {
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.08);
+      animation: scale .5s ease;
+    }
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

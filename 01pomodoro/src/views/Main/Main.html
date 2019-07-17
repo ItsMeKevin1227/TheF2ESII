@@ -3,9 +3,23 @@
     <AddMission />
     <MissionList />
   </div>
-  <div class="mission-countdown-time-panel"></div>
-  <!-- <router-link to="Analytics">Analytics</router-link>
-  <router-link to="TodoListFolder">TodoListFolder</router-link>
-  <router-link to="Ringtones">Ringtones</router-link> -->
-  <div class="panel-right"></div>
+  <div ref='countdownClock' class="mission-countdown-time-panel">
+    <CountdownClock :width="width"
+                    :setTimer='25 * 60 * 1000' />
+  </div>
+
+  <div class="panel-right">
+    <router-link class="router-link shared-transformation" to="Analytics">
+      <svg-icon iconClass="todo-list" />
+    </router-link>
+    <router-link class="router-link shared-transformation" to="TodoListFolder">
+      <svg-icon iconClass="analytics" />
+    </router-link>
+    <router-link class="router-link shared-transformation" to="Ringtones">
+      <svg-icon iconClass="ringtone" />
+    </router-link>
+    <p>
+      POMODORO
+    </p>
+  </div>
 </div>
