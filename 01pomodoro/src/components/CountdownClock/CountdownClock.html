@@ -1,46 +1,28 @@
-<div class="countdown-clock">
+<div
+  class="circle"
+  :class="{
+      'circle--work': isWorking,
+      'circle--play': isPlaying,
+      'circle--md': size === 'md',
+      'circle--sm': size === 'sm'
+    }"
+  @click="onClick"
+>
+  <div class="circle-bg" ref="bg">
+    <svg-icon :iconClass="toggleIcon" />
+  </div>
   <svg
-    viewBox="0 0 200 200"
-    xmlns="http://www.w3.org/2000/svg"
-    :width="width"
-    :height="width"
+    class="circle-svg"
+    preserveAspectRatio="xMidYMid meet"
+    :viewBox="`0 0 ${circleDiameter} ${circleDiameter}`"
+    ref="svg"
   >
     <circle
-      cx="100"
-      cy="100"
-      :r="100 - border / 2"
-      fill="none"
-      opacity="0.4"
-      :stroke="color"
-      :stroke-width="border"
-    />
-    <circle
-      cx="100"
-      cy="100"
-      :r="100 - border / 2"
-      fill="none"
-      transform="rotate(270,100,100)"
-      :stroke="color"
-      :stroke-width="border"
-      :stroke-dasharray="dashLen"
-      :stroke-dashoffset="dashOffset"
-      style="transition: stroke-dashoffset 0.4s"
-    />
-    <text
-      x="100"
-      y="100"
-      text-anchor="middle"
-      :font-size="fontSize + 5"
-      :fill="color"
-    >
-      {{ countDown }}
-    </text>
-    <text
-      x="100"
-      y="150"
-      text-anchor="middle"
-      :font-size="fontSize"
-      fill="#d4d4d4"
-    ></text>
+      class="circle-svg-circle"
+      cx="50%"
+      cy="50%"
+      :r="circleRadius"
+      ref="circle"
+    ></circle>
   </svg>
 </div>

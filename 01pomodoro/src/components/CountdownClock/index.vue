@@ -1,66 +1,107 @@
+
 <script>
+import { PLAY_OR_STOP } from '@/stores/constants/actions'
+
 export default {
   name: 'CountdownClock',
   props: {
-    setTimer: {
+    value: {
       type: Number,
-      required: true
+      default: 0
     },
-    width: {
+    diameter: {
       type: Number,
-      default: 80
+      default: 60
     },
-    border: {
+    stroke: {
       type: Number,
-      default: 8
+      default: 10
     },
-    color: {
+    size: {
       type: String,
-      default: '#FF4384'
-    },
-    fontSize: {
-      type: Number,
-      default: 30
-    }
-  },
-  data () {
-    return {
-      timeLeft: this.setTimer,
-      dashLen: (100 - this.border / 2) * Math.PI * 2
+      default: 'lg'
     }
   },
   computed: {
-    countDown () {
-      let time = this.timeLeft
-      if (time <= 0) {
-        return '00:00:00'
-      } else {
-        let result = []
-        result.push(Math.floor(time / 3.6e+6))
-        result.push(Math.floor(time % 3.6e+6 / 60000))
-        result.push(Math.floor(time % 60000 / 1000))
-        return result.map(x => x < 10 ? '0' + x : x).join(':')
-      }
+    circleDiameter () {
+      return this.diameter - 6
     },
-    dashOffset () {
-      return this.dashLen - this.timeLeft / this.setTimer * this.dashLen
+    circleRadius () {
+      return (this.circleDiameter - this.stroke) / 2
+    },
+    circleStrokeWidth () {
+      return parseInt(this.stroke) + 1 + 'px'
+    },
+    circleCircumference () {
+      return 2 * Math.PI * this.circleRadius
+    },
+    circleStrokeDashArray () {
+      return this.circleCircumference + 'px'
+    },
+    circleStrokeDashOffset () {
+      return (this.circleCircumference * (100 - this.value)) / 100 + 'px'
+    },
+    isWorking () {
+      return this.$store.state.main.isWorking
+    },
+    isPlaying () {
+      return this.$store.state.main.isPlaying
+    },
+    toggleIcon () {
+      return this.isPlaying ? 'pause' : 'play'
+    }
+  },
+  watch: {
+    value () {
+      this.attachCircleStyle()
+    },
+    diameter () {
+      this.attachBgStyle()
+      this.attachSvgStyle()
+      this.attachCircleStyle()
+    },
+    stroke () {
+      this.attachCircleStyle()
+    }
+  },
+  methods: {
+    attachSvgStyle () {
+      const svg = this.$refs.svg
+      const size = `${this.circleDiameter}px`
+      svg.style.width = size
+      svg.style.height = size
+    },
+    attachCircleStyle () {
+      const circle = this.$refs.circle
+      circle.style.strokeDashoffset = this.circleStrokeDashOffset
+      circle.style.strokeDasharray = this.circleStrokeDashArray
+      circle.style.strokeWidth = this.circleStrokeWidth
+      circle.style.setProperty(
+        '--md-progress-spinner-start-value',
+        0.95 * this.circleCircumference
+      )
+      circle.style.setProperty(
+        '--md-progress-spinner-end-value',
+        0.2 * this.circleCircumference
+      )
+    },
+    attachBgStyle () {
+      const bg = this.$refs.bg
+      const size = `${this.circleDiameter - this.stroke * 2}px`
+      bg.style.width = size
+      bg.style.height = size
+    },
+    onClick () {
+      this.$store.dispatch(PLAY_OR_STOP)
     }
   },
   mounted () {
-    this.lastDate = Date.now()
-    this.interval = setInterval(() => {
-      let curDate = Date.now()
-      let diff = Math.round((curDate - this.lastDate) / 1000) * 1000
-      this.timeLeft -= diff
-      if (this.timeLeft <= 0) {
-        clearInterval(this.interval)
-      }
-      if (diff >= 1000) {
-        this.lastDate = curDate
-      }
-    }, 1000)
+    this.attachBgStyle()
+    this.attachSvgStyle()
+    this.attachCircleStyle()
   }
 }
 </script>
+
 <template src="./CountdownClock.html"></template>
 <style lang="less" src="./CountdownClock.less"></style>

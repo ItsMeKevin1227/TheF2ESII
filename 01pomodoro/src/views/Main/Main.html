@@ -3,12 +3,14 @@
     <AddMission />
     <MissionList />
   </div>
-  <div ref='countdownClock' class="mission-countdown-time-panel">
-    <CountdownClock :width="width"
-                    :setTimer='25 * 60 * 1000' />
-  </div>
 
   <div class="panel-right">
+    <div ref='countdownClock'
+        class="mission-countdown-time-panel">
+      <CountdownClock v-if="!isMobile"
+                      :value="percentage"
+                      :diameter="isLarge ? 540 : 380" />
+    </div>
     <router-link class="router-link shared-transformation" to="Analytics">
       <svg-icon iconClass="todo-list" />
     </router-link>

@@ -1,3 +1,124 @@
-.countdown-clock{
-  
+.circle {
+  color: @text-break-primary;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+
+  &-bg {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: currentColor;
+
+    .svg-icon {
+      width: 96px;
+      min-width: 96px;
+      height: 96px;
+      font-size: 96px !important;
+      position: relative;
+      color: #fff;
+
+      &::after {
+        position: absolute;
+        content: ' ';
+        background: currentColor;
+        width: 12px;
+        height: 12px;
+        bottom: 10px;
+        right: -6px;
+      }
+    }
+  }
+
+  &-svg {
+    z-index: -1;
+    overflow: visible;
+    transform: scale(1) rotate(-90deg);
+    transform-origin: center;
+    transition: 0.4s;
+    will-change: opacity, transform;
+
+    &-circle {
+      fill: none;
+      stroke: currentColor;
+      transform-origin: center;
+      transition: stroke-dashoffset 0.25s;
+      will-change: stroke-dashoffset, stroke-dasharray, stroke-width,
+        animation-name, r;
+    }
+  }
+
+  &--work {
+    color: @text-primary;
+  }
+
+  &--play {
+    .circle {
+      &-bg {
+        background: #fff;
+
+        .svg-icon {
+          color: currentColor;
+        }
+      }
+    }
+  }
+
+  &--sm {
+    .circle {
+      &-bg {
+        border: 3px solid #fff;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: currentColor;
+
+        .svg-icon {
+          width: 90px;
+          min-width: 90px;
+          height: 90px;
+          font-size: 90px !important;
+          border-radius: 50%;
+          border: 8px solid currentColor;
+          color: #fff;
+
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+
+    &.circle--play {
+      .circle {
+        &-bg {
+          background: #fff;
+          border: 3px solid currentColor;
+
+          .svg-icon {
+            color: currentColor;
+          }
+        }
+      }
+    }
+  }
+
+  &--md {
+    .circle-bg {
+      .svg-icon {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+        font-size: 50px !important;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
 }
