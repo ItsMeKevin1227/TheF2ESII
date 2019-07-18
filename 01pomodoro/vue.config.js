@@ -5,6 +5,7 @@ function resolve (dir) {
 }
 
 module.exports = {
+  baseUrl: './',
   chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
