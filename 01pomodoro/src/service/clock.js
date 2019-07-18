@@ -3,9 +3,9 @@ import { TICK_TOC } from '@/stores/constants/mutation-types'
 import {
   ADD_TOMATO_ON_CURRENT,
   ADD_TOMATO_ON_REPORT,
-  FINISH_COUNT_DOWN,
+  FINISH_COUNTDOWN,
   PLAY_BREAK_ALARM,
-  PLAY_WOKR_ALARM
+  PLAY_WORK_ALARM
 } from '@/stores/constants/actions'
 
 let interval = null
@@ -16,18 +16,16 @@ export const startClock = (commit, dispatch, state) => {
   let total = state.countDown
   let isWorking = state.isWorking
   interval = setInterval(() => {
-    // console.log(count, state.countDown, total);
     commit(TICK_TOC)
     count++
     if (count === total) {
-      // console.log('same');
       clearInterval(interval)
-      dispatch(FINISH_COUNT_DOWN)
+      dispatch(FINISH_COUNTDOWN)
       console.log(isWorking, state.isWorking)
       if (isWorking) {
         dispatch(ADD_TOMATO_ON_CURRENT)
         dispatch(ADD_TOMATO_ON_REPORT)
-        dispatch(PLAY_WOKR_ALARM)
+        dispatch(PLAY_WORK_ALARM)
       } else {
         dispatch(PLAY_BREAK_ALARM)
       }

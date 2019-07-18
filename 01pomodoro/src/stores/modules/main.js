@@ -69,7 +69,7 @@ const main = {
   actions: {
     [PLAY_OR_STOP] ({ dispatch, commit, state }) {
       if (state.isPlaying) {
-        dispatch(START_COUNTDOWN)
+        dispatch(STOP_COUNTDOWN)
       } else {
         dispatch(START_COUNTDOWN)
       }

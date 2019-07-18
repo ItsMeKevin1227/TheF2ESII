@@ -5,8 +5,7 @@
   </div>
 
   <div class="panel-right">
-    <div ref='countdownClock'
-        class="mission-countdown-time-panel">
+    <div class="mission-countdown-time-panel">
       <CountdownClock v-if="!isMobile"
                       :value="percentage"
                       :diameter="isLarge ? 540 : 380" />
