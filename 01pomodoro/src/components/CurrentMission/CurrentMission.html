@@ -1,12 +1,16 @@
 <div class="current-mission">
   <div class="current-mission-information">
-    <span class="circle-48"></span>
-    <div class="mission-text">
-      <h1>{{ currentMission }}</h1>
+    <span class="circle-48" @click="toggleDone"></span>
+    <div class="mission-text" v-if="currentMission">
+      <h1>{{ currentMission.title }}</h1>
       <div class="mission-count">
         <span v-for="(item,index) in 4" class="circle-12 done"></span>
       </div>
     </div>
+    <div v-else class="no-mission">Please add new Mission</div>
   </div>
-  <div class="current-mission-time">{{ minutes }}:{{ seconds }}</div>
+  <div v-if="currentMission" class="current-mission-time">
+    {{ minutes }}:{{ seconds }}
+  </div>
+  <div v-else class="current-mission-time no-mission">00:00</div>
 </div>

@@ -1,21 +1,26 @@
 <script>
 import _ from 'lodash'
+import { TODDLE_TODO_DONE } from '@/stores/constants/mutation-types'
+
 export default {
   name: 'CurrentMission',
-  data () {
-    return {
-      currentMission: 'the First thing to do today'
-    }
-  },
   computed: {
+    countDown () {
+      return this.$store.state.main.countDown
+    },
+    currentMission () {
+      return this.$store.getters.current
+    },
     minutes () {
       return _.padStart(Math.floor(this.countDown / 60), 2, '0')
     },
     seconds () {
       return _.padStart(this.countDown % 60, 2, '0')
-    },
-    countDown () {
-      return this.$store.state.main.countDown
+    }
+  },
+  methods: {
+    toggleDone () {
+      return this.$store.commit(TODDLE_TODO_DONE, this.currentMission.id)
     }
   }
 }

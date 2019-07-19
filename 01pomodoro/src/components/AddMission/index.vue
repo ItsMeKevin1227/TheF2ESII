@@ -1,15 +1,20 @@
 <script>
+import { ADD_NEW_TODO } from '@/stores/constants/mutation-types'
+
 export default {
   name: 'AddMission',
   data () {
     return {
-      missionText: ''
+      todoText: ''
     }
   },
   methods: {
     addMission () {
-      if (this.missionText === '') return
-      console.log(this.missionText)
+      const trimTitle = this.todoText.trim()
+      if (trimTitle) {
+        this.$store.commit(ADD_NEW_TODO, trimTitle)
+        this.todoText = ''
+      }
     }
   }
 }

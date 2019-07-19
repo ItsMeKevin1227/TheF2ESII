@@ -30,9 +30,6 @@ export default {
     percentage () {
       return this.$store.getters.undonePercentage
     },
-    todoList () {
-      return this.$store.getters.threeUndoList
-    },
     showMenu () {
       return this.$store.state.screen.showMenu
     }

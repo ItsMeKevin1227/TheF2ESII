@@ -4,6 +4,11 @@ export default {
   name: 'TodoList',
   components: {
     TodoItem
+  },
+  computed: {
+    todoList () {
+      return this.$store.getters.threeUndoList
+    }
   }
 }
 </script>

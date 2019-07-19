@@ -3,6 +3,7 @@ import CurrentMission from '@/components/CurrentMission'
 import TodoList from '@/components/TodoList'
 export default {
   name: 'MissionList',
+  inheritAttrs: false,
   components: {
     CurrentMission, TodoList
   }
