@@ -4,7 +4,7 @@ import {
   ADD_NEW_TODO,
   ADD_TOMATO,
   CLEAN_DONE_TODO,
-  TODDLE_TODO_DONE
+  TOGGLE_TODO_DONE
 } from '@/stores/constants/mutation-types'
 import { generateId } from '@/service/todo'
 import { ADD_TOMATO_ON_CURRENT } from '@/stores/constants/actions'
@@ -65,7 +65,8 @@ const todo = {
   },
   mutations: {
     [ADD_NEW_TODO] (state, title) {
-      state.todoList.unshift({
+      // add new todo to todo-list
+      state.todoList.push({
         id: generateId(),
         isDone: false,
         tomato: 0,
@@ -78,7 +79,7 @@ const todo = {
       }
       setLocalStorage(LOCAL_STORAGE_KEY.TODO_LIST, state.todoList)
     },
-    [TODDLE_TODO_DONE] (state, id) {
+    [TOGGLE_TODO_DONE] (state, id) {
       state.todoList = state.todoList.map(item => {
         if (item.id === id) {
           return {

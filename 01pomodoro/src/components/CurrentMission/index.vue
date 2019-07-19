@@ -1,6 +1,6 @@
 <script>
 import _ from 'lodash'
-import { TODDLE_TODO_DONE } from '@/stores/constants/mutation-types'
+import { TOGGLE_TODO_DONE } from '@/stores/constants/mutation-types'
 
 export default {
   name: 'CurrentMission',
@@ -20,7 +20,8 @@ export default {
   },
   methods: {
     toggleDone () {
-      return this.$store.commit(TODDLE_TODO_DONE, this.currentMission.id)
+      if (!this.currentMission) return
+      this.$store.commit(TOGGLE_TODO_DONE, this.currentMission.id)
     }
   }
 }

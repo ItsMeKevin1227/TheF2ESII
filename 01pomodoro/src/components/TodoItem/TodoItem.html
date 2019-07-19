@@ -1,5 +1,6 @@
 <li class="todo-item">
   <span class="circle-20"></span>
   <p class="mission-text">{{ todo.title }}</p>
-  <span class="circle-16 change-mission-button"></span>
+  <span class="circle-16 change-mission-button"
+        @click="toggleCurrentMission(todo.id)" />
 </li>
