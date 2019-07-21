@@ -1,0 +1,34 @@
+.left-nav {
+  font-size: 36px;
+
+  .router-link {
+    display: block;
+    margin-bottom: 45px;
+    color: rgba(255, 255, 255, .2);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    user-select: none;
+
+    &.shared-transformation {
+
+      &::before,
+      &::after {
+        width: 1.5em;
+        height: 1.5em;
+        top: -0.1em;
+        left: -0.4em;
+      }
+    }
+
+    .svg-icon {
+      color: #fff;
+      margin-right: 8px;
+      font-size: 28px;
+    }
+
+    &.--active {
+      color: @text-primary;
+    }
+  }
+}

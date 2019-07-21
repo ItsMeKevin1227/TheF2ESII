@@ -14,7 +14,7 @@ module.exports = {
       addStyleResource(config.module.rule('less').oneOf(type))
     )
 
-    // // import alias
+    // import alias
     // config.resolve.alias
     //   .set('Stores', resolve('@/stores'))
     //   .set('Views', resolve('@/views'))

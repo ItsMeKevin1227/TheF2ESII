@@ -1,6 +1,10 @@
 <script>
+import LeftNav from '@/components/LeftNav'
 export default {
-  name: 'Ringtones'
+  name: 'Ringtones',
+  components: {
+    LeftNav
+  }
 }
 </script>
 <template src="./Ringtones.html"></template>

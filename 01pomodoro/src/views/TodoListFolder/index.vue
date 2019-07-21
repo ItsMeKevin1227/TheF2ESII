@@ -1,6 +1,10 @@
 <script>
+import LeftNav from '@/components/LeftNav'
 export default {
-  name: 'TodoListFolder'
+  name: 'TodoListFolder',
+  components: {
+    LeftNav
+  }
 }
 </script>
 <template src="./TodoListFolder.html"></template>
