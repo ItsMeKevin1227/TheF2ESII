@@ -1,5 +1,5 @@
 {
-  "name": "01Pomodoro",
+  "name": "02FreeCell",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "eslint-config-prettier-standard": "^3.0.1",
-    "lodash": "^4.17.14",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -23,11 +20,9 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
-    "style-loader": "^0.23.1",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
     "style-resources-loader": "^1.2.1",
-    "svg-sprite-loader": "^4.1.6",
     "vue-template-compiler": "^2.6.10"
   }
 }
