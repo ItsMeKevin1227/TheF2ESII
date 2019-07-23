@@ -1,0 +1,19 @@
+<div class="game-rule light-box"
+     @click="closeLightBox">
+  <div class="game-rule-container">
+    <div class="title">
+      <svg-icon iconClass="bone" :iconSize="40" />
+      HOW TO PLAY?
+      <svg-icon iconClass="bone" :iconSize="40" />
+    </div>
+    <div class="content">
+      Freecell is a one-deck solitaire card game. All cards are dealt into 8 tableau piles. Four Cells (in the top left corner of the screen) and four foundation piles (top right hand corner) are placed above the tableau piles. The object of the game is to build up all cards on foundations from Ace to King by following suit. You win when all 52 cards are moved there, 13 to a pile. Top cards of tableau piles and cards from Cells are available to play. You can build tableau piles down by alternating color. Only one card at a time can be moved. The top card of any tableau pile can also be moved to any Cell. Each Cell (or Reserve space) may contain only one card. Cards in the cells can be moved to the foundation piles or back to the tableau piles, if possible. The rules state that you can move only one card at a time, but you can move group of cards in the proper sequence if you have enough free (empty) Cells and/or tableau piles.
+    </div>
+    <div class="close-button"
+         @click="closeLightBox">
+      <svg-icon class="close-button"
+                iconClass="cancel"
+                :iconSize="20" />
+    </div>
+  </div>
+</div>

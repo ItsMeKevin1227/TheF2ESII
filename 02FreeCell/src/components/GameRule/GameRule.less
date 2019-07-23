@@ -1,0 +1,56 @@
+.game-rule {
+  color: #fff;
+
+  .game-rule-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    padding: 24px 28px;
+    background-color: #453122;
+    border: #2F2417 4px solid;
+    border-radius: 8px;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 8px #000;
+
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+
+      .svg-icon {
+        margin: 0 12px;
+      }
+    }
+
+    .content {
+      font-size: 12px;
+      overflow-y: auto;
+      line-height: 20px;
+
+      &::-webkit-scrollbar {
+        position: absolute;
+      }
+
+      &::-webkit-scrollbar-track {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        position: absolute;
+        width: 12px;
+        background-color: #2F2417;
+        border: 3px solid #000;
+        border-radius: 12px;
+      }
+    }
+
+    .close-button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      cursor: pointer;
+    }
+  }
+}

@@ -14,14 +14,6 @@ module.exports = {
       addStyleResource(config.module.rule('less').oneOf(type))
     )
 
-    // import alias
-    // config.resolve.alias
-    //   .set('Stores', resolve('@/stores'))
-    //   .set('Views', resolve('@/views'))
-    //   .set('Components', resolve('@/components'))
-    //   .set('Assets', resolve('@/assets'))
-    //   .set('Styles', resolve('@/styles'))
-
     // svg rule loader
     const svgRule = config.module.rule('svg') // find svg-loader
     svgRule.uses.clear() // 清除已有的loader
