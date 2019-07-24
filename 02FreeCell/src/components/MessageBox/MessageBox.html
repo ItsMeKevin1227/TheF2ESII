@@ -1,0 +1,13 @@
+<div class="game-rule light-box"
+     @click.self="closeLightBox">
+  <div class="game-rule-container">
+    <slot name="title" class="title"></slot>
+    <slot name="main" class="content"></slot>
+    <div class="close-button"
+         @click="closeLightBox">
+      <svg-icon class="close-button"
+                iconClass="cancel"
+                :iconSize="20" />
+    </div>
+  </div>
+</div>

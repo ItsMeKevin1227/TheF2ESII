@@ -1,20 +1,69 @@
 <template>
   <div id="app">
-    <GameRule v-if="isGameRuleOpen" @closeLightBox="closeLightBox" />
+    <MessageBox v-if="isGameRuleOpen" panelType="gameRule" @closeLightBox="closeLightBox">
+      <template #title>
+        <div class="title">
+          <svg-icon iconClass="bone" :iconSize="40" />
+          HOW TO PLAY?
+          <svg-icon iconClass="bone" :iconSize="40" />
+        </div>
+      </template>
+      <template #main>
+        <div class="text-content">
+          Freecell is a one-deck solitaire card game. All cards are dealt into 8 tableau piles. Four Cells (in the top left corner of the screen) and four foundation piles (top right hand corner) are placed above the tableau piles. The object of the game is to build up all cards on foundations from Ace to King by following suit. You win when all 52 cards are moved there, 13 to a pile. Top cards of tableau piles and cards from Cells are available to play. You can build tableau piles down by alternating color. Only one card at a time can be moved. The top card of any tableau pile can also be moved to any Cell. Each Cell (or Reserve space) may contain only one card. Cards in the cells can be moved to the foundation piles or back to the tableau piles, if possible. The rules state that you can move only one card at a time, but you can move group of cards in the proper sequence if you have enough free (empty) Cells and/or tableau piles.
+        </div>
+      </template>
+    </MessageBox>
+    <MessageBox v-if="isNewGameOpen" panelType="newGame" @closeLightBox="closeLightBox">
+      <template #title>
+        <div class="title">
+          <svg-icon iconClass="bone" :iconSize="40" />
+          NEW GAME
+          <svg-icon iconClass="bone" :iconSize="40" />
+        </div>
+      </template>
+      <template #main>
+        <div class="button-content">
+          <button>Quit and Start a New Game</button>
+          <button>Restart This Game</button>
+          <button>Keep Playing</button>
+        </div>
+      </template>
+    </MessageBox>
+    <MessageBox v-if="isGameOver" panelType="gameOver" @closeLightBox="closeLightBox">
+      <template #title>
+        <div class="title">
+          <svg-icon iconClass="bone" :iconSize="40" />
+          No More Moves
+          <svg-icon iconClass="bone" :iconSize="40" />
+        </div>
+      </template>
+      <template #main>
+        <div class="button-content">
+          <button>Quit and Start a New Game</button>
+          <button>Restart This Game</button>
+          <button>Go back and undo some moves</button>
+        </div>
+      </template>
+    </MessageBox>
+    <GameContainer></GameContainer>
   </div>
 </template>
 
 <script>
-import GameRule from '@/components/GameRule'
+import MessageBox from '@/components/MessageBox'
+import GameContainer from '@/views/GameContainer'
 
 export default {
   name: 'app',
   components: {
-    GameRule
+    MessageBox, GameContainer
   },
   data () {
     return {
-      isGameRuleOpen: false
+      isGameRuleOpen: false,
+      isNewGameOpen: false,
+      isGameOver: true
     }
   },
   methods: {
@@ -23,6 +72,12 @@ export default {
         case 'gameRule':
           this.isGameRuleOpen = false
           break
+        case 'newGame':
+          this.isNewGameOpen = false
+          break
+        case 'gameOver':
+          this.isGameOver = false
+          break
 
         default:
           break
@@ -30,7 +85,7 @@ export default {
     }
   },
   mounted () {
-    this.isGameRuleOpen = true
+    // this.isGameRuleOpen = true
   }
 }
 </script>
@@ -43,4 +98,5 @@ export default {
   background-size: contain;
   background-position: 50% 50%;
 }
+
 </style>
