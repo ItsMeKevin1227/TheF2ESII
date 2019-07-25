@@ -1,11 +1,17 @@
 <template>
   <div id="app">
+    <svg-icon iconClass="logo-bk"
+              className="logo-bk"
+              :iconWidth="340"
+              :iconHeight="62" />
+    <GameContainer></GameContainer>
+    <!-- gameRule -->
     <MessageBox v-if="isGameRuleOpen" panelType="gameRule" @closeLightBox="closeLightBox">
       <template #title>
         <div class="title">
-          <svg-icon iconClass="bone" :iconSize="40" />
+          <svg-icon iconClass="bone" :iconWidth="40" :iconHeight="40" />
           HOW TO PLAY?
-          <svg-icon iconClass="bone" :iconSize="40" />
+          <svg-icon iconClass="bone" :iconWidth="40" :iconHeight="40" />
         </div>
       </template>
       <template #main>
@@ -14,12 +20,13 @@
         </div>
       </template>
     </MessageBox>
+    <!-- newGame -->
     <MessageBox v-if="isNewGameOpen" panelType="newGame" @closeLightBox="closeLightBox">
       <template #title>
         <div class="title">
-          <svg-icon iconClass="bone" :iconSize="40" />
+          <svg-icon iconClass="bone" :iconWidth="40" :iconHeight="40" />
           NEW GAME
-          <svg-icon iconClass="bone" :iconSize="40" />
+          <svg-icon iconClass="bone" :iconWidth="40" :iconHeight="40" />
         </div>
       </template>
       <template #main>
@@ -30,12 +37,13 @@
         </div>
       </template>
     </MessageBox>
+    <!-- gameOver -->
     <MessageBox v-if="isGameOver" panelType="gameOver" @closeLightBox="closeLightBox">
       <template #title>
         <div class="title">
-          <svg-icon iconClass="bone" :iconSize="40" />
+          <svg-icon iconClass="bone" :iconWidth="40" :iconHeight="40" />
           No More Moves
-          <svg-icon iconClass="bone" :iconSize="40" />
+          <svg-icon iconClass="bone" :iconWidth="40" :iconHeight="40" />
         </div>
       </template>
       <template #main>
@@ -46,7 +54,6 @@
         </div>
       </template>
     </MessageBox>
-    <GameContainer></GameContainer>
   </div>
 </template>
 
@@ -63,7 +70,7 @@ export default {
     return {
       isGameRuleOpen: false,
       isNewGameOpen: false,
-      isGameOver: true
+      isGameOver: false
     }
   },
   methods: {
@@ -97,6 +104,12 @@ export default {
   background-image: url('./assets/bg-all.png');
   background-size: contain;
   background-position: 50% 50%;
+  padding: 52px 84px;
+  .logo-bk {
+    position: absolute;
+    top: 52px;
+    left: 0;
+  }
 }
 
 </style>
