@@ -92,7 +92,7 @@ export default {
     }
   },
   mounted () {
-    // this.isGameRuleOpen = true
+    this.isGameRuleOpen = true
   }
 }
 </script>
