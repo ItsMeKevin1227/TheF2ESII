@@ -1,3 +1,4 @@
 TheF2E Season II Begining!
 
-1st. pomodoro(https://challenge.thef2e.com/works?stage=1&orderBy=created_at&sort=desc)
+1st. [Pomodoro](https://itsmekevin1227.github.io/TheF2ESII/01pomodoro/dist/#/)
+2nd. [FreeCell](https://itsmekevin1227.github.io/TheF2ESII/02FreeCell/dist/)
