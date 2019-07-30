@@ -1,0 +1,61 @@
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px;
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 48px;
+
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      margin-left: 20px;
+      font-family: 'Ubuntu';
+    }
+  }
+
+  li {
+    position: relative;
+    margin-top: 8px;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 4px 0;
+      color: @text-primary;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 0;
+        display: none;
+        width: 4px;
+        height: 100%;
+        background-color: @text-info;
+      }
+
+    }
+
+    .svg-icon {
+      margin-right: 16px;
+      font-size: 20px;
+    }
+
+    &:hover a {
+      color: @text-info;
+    }
+
+    &:hover .svg-icon {
+      color: @text-info;
+    }
+
+    &:hover a::before {
+      display: block;
+    }
+
+  }
+}

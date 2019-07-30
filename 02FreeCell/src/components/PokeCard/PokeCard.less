@@ -1,0 +1,24 @@
+.poker-card {}
+
+.poke_card {
+  width: 110px;
+  height: 160px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1.5s;
+
+  &.started {
+    transition: .3s;
+  }
+
+  cursor: pointer;
+
+  &.ghost {
+    opacity: 0;
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "02FreeCell",
+  "name": "03MP3",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
-    "vuedraggable": "^2.23.0",
+    "vue-router": "^3.0.7",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
-    "less-loader": "^4.1.0",
+    "less-loader": "^5.0.0",
     "style-resources-loader": "^1.2.1",
     "svg-sprite-loader": "^4.1.6",
     "vue-template-compiler": "^2.6.10"

@@ -1,0 +1,31 @@
+<div class="poker-card">
+  <draggable
+    element="div"
+    :class="className"
+    :data-number="cardData.number"
+    :data-color="cardData.color"
+    :data-flower="cardData.flower"
+    :data-position="position"
+    :data-fixed="cardData.fixed"
+    :style="{
+      backgroundImage: `url('${ imgUrl }')`,
+      top: isStarted ? mytop+'px' : '0px',
+    }"
+    v-bind="getOptions()"
+    :list="cardData.childElement"
+    :value="value"
+    @input="emitter"
+    @start="onStart"
+    @end="onEnd"
+    :move="onMove"
+  >
+    <PokeCard
+      v-for="card in realValue"
+      :key="card.id"
+      :className="'poke_card sub_card'"
+      :cardData="card"
+      :isSub="true"
+      :position="position"
+    ></PokeCard>
+  </draggable>
+</div>

@@ -1,0 +1,45 @@
+.music-library {
+  padding: 28px 32px;
+
+  border-top: 1px solid @border;
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    color: @text-secondary;
+    font-weight: normal;
+  }
+
+  li {
+    position: relative;
+    margin-top: 8px;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 4px 0;
+      color: @text-primary;
+
+      &:hover {
+        color: @text-info;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 0;
+        display: none;
+        width: 4px;
+        height: 100%;
+        background-color: @text-info;
+      }
+
+    }
+
+
+    &:hover a::before {
+      display: block;
+    }
+  }
+}

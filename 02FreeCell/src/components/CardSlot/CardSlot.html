@@ -1,0 +1,16 @@
+<div class="card-slot">
+  <draggable element="div"
+             v-bind="getOptions()"
+             :style="{ height: slotHeight + 'px' }"
+             v-model="cardLists"
+             @start="onStart"
+             @end="onEnd"
+             :move="onMove">
+    <PokeCard v-for="(card, cindex) in slotData.cards"
+              :key="card.id"
+              :cardData="card"
+              :top="myTop(cindex) * 35"
+              :position="'bottom'"
+              :className="className" />
+  </draggable>
+</div>
