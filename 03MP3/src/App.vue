@@ -25,6 +25,7 @@ export default {
 <style lang="less">
 #app {
   height: 100vh;
+  overflow: hidden;
   .top-section{
     display: flex;
     width: 100%;

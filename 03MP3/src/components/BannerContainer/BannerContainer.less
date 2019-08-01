@@ -1,0 +1,102 @@
+.banner-container {
+  position: relative;
+  width: 100%;
+
+  .banner-list {
+    position: relative;
+    display: flex;
+    width: 400%;
+    overflow: hidden;
+    z-index: -1;
+
+    .banner-item {
+      width: 25%;
+      padding-bottom: 9%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-image: url('../../assets/banner-1.png');
+      overflow: hidden;
+
+      &.banner-item1 {
+        background-image: url('../../assets/banner-1.png');
+      }
+    }
+  }
+
+  .top-feature {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+
+    .svg-icon {
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+
+    .search-input {
+      color: @text-primary;
+      position: relative;
+
+      input {
+        color: @text-primary;
+        border-radius: 12px;
+        border: none;
+        padding: 4px 8px;
+        font-size: 12px;
+
+        &::placeholder {
+          color: @text-primary;
+        }
+      }
+
+      .svg-icon {
+        position: absolute;
+        right: 8px;
+        top: 4px;
+      }
+    }
+  }
+
+  .bottom-feature {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
+    color: #fff;
+
+    .singer-name {
+      font-family: 'Ubuntu';
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    .follow {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .follow-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 4px;
+        background-color: rgba(255, 255, 255, .1);
+        border-radius: 32px;
+        color: #ffffff;
+      }
+    }
+  }
+}
