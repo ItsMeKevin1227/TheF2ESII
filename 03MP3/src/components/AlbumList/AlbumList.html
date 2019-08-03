@@ -1,3 +1,13 @@
 <div class="album-list">
-  album-list
+  <span>New Album</span>
+  <div class="album-item" v-for="(item,index) in albumList">
+    <div
+      class="album-cover"
+      :style="{backgroundImage: 'url(' + item.cover + ')' }"
+    ></div>
+    <div class="album-info">
+      <p>{{ item.name }}</p>
+      <p>{{ item.year }}</p>
+    </div>
+  </div>
 </div>

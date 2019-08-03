@@ -1,3 +1,15 @@
 <div class="song-list">
-  song-list
+  <div class="song-list-title">
+    {{ songListTitle }}
+    <span>
+      <svg-icon iconClass="play"></svg-icon>
+    </span>
+  </div>
+  <div class="play-list scroll-bar">
+    <div v-for="(item,index) in songList">
+      <img src="https://api.fnkr.net/testimg/60x60/cccccc/FFF/?text=AlbumPicture"
+         alt="" />
+      <PlayItem :songName="item.name" :songIndex="index + 1" :songTime="item.time" />
+    </div>
+  </div>
 </div>

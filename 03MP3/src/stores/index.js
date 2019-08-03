@@ -5,12 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    playing: null,
+    artist: null
   },
+
   mutations: {
-
-  },
-  actions: {
-
+    SWITCH_SONG (state, songName) {
+      state.playing = songName
+    }
   }
 })

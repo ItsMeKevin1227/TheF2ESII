@@ -1,5 +1,5 @@
-<script>export default {
-
+<script>
+export default {
   name: 'BannerContainer',
   data () {
     return {
@@ -9,4 +9,6 @@
   }
 }
 
-</script><template src="./BannerContainer.html"></template><style lang="less"src="./BannerContainer.less"></style>
+</script>
+<template src="./BannerContainer.html"></template>
+<style lang="less" src="./BannerContainer.less"></style>

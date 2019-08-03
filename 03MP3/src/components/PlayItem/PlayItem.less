@@ -1,0 +1,74 @@
+.play-item {
+  position: relative;
+  width: calc(100% - 60px);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: @text-primary;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 20px;
+  border-top: 1px solid @border;
+
+  .song-info {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+
+    .svg-icon.heart {
+      margin: 0 20px;
+    }
+
+    .song-name {
+      margin: 0;
+      flex: 1;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+
+  }
+
+  .song-feature {
+    position: absolute;
+    right: 16px;
+    display: flex;
+    white-space: nowrap;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+      width: 1em;
+      height: 1em;
+      border: 1px solid @border;
+      border-radius: 50%;
+      color: @text-primary;
+    }
+
+    .play {
+      font-size: 4px;
+      transform: scale(.6);
+    }
+
+    .more {
+      margin: 0 16px;
+    }
+  }
+
+  &:hover,
+  &:hover .svg-icon {
+    color: @text-info;
+  }
+
+  &:hover span {
+    display: flex;
+    border-color: @text-info;
+  }
+
+}

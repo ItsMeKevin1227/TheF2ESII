@@ -1,0 +1,18 @@
+<div class="play-item" @click="playSong">
+  <div class="song-info">
+    {{ songIndex }}
+    <svg-icon iconClass="heart" className="heart" />
+    <p class="song-name">
+      {{ songName }}
+    </p>
+  </div>
+  <div class="song-feature">
+    <span>
+      <svg-icon iconClass="play"
+                className="play"></svg-icon>
+    </span>
+    <svg-icon iconClass="more"
+              className="more"></svg-icon>
+    {{ songTime }}
+  </div>
+</div>

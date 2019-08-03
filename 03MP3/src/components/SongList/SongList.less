@@ -1,3 +1,57 @@
-.song-list{
-  
+.song-list {
+  width: 68%;
+  max-height: calc(84vh - 4%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+
+  .song-list-title {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: @text-primary;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      margin-left: 8px;
+      border: 1px solid @border;
+      border-radius: 50%;
+      color: @text-primary;
+      cursor: pointer;
+
+      &:hover {
+        border-color: @text-info;
+        color: @text-info;
+      }
+    }
+
+    .svg-icon {
+      font-size: 12px;
+    }
+  }
+
+  .play-list {
+    flex: 1;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    > div {
+      display: flex;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
 }
