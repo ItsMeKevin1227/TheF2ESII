@@ -1,6 +1,12 @@
 <script>
+import PlayingInfo from '@/components/PlayingInfo'
+import PlayingPanel from '@/components/PlayingPanel'
+import PlayingSetting from '@/components/PlayingSetting'
 export default {
-  name: 'PlayPanel'
+  name: 'PlayPanel',
+  components: {
+    PlayingInfo, PlayingPanel, PlayingSetting
+  }
 }
 </script>
 <template src="./PlayPanel.html"></template>

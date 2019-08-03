@@ -1,0 +1,53 @@
+.playing-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 16%;
+
+  .playing-info-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      +div {
+        margin-top: 12px;
+      }
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #333333;
+      margin: 0;
+      width: 72%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .playing-info-feature {
+      position: absolute;
+      right: 0;
+    }
+
+    .svg-icon {
+      cursor: pointer;
+
+      &:hover {
+        color: @text-info;
+      }
+
+      &.cycle {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .playing-info-bottom {
+    color: @text-primary;
+  }
+}

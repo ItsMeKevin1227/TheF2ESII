@@ -1,0 +1,54 @@
+.playing-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .playing-panel-top,
+  .playing-panel-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .playing-panel-bottom {
+    margin-top: 20px;
+    color: @text-primary;
+    font-size: 12px;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid @border;
+    margin: 0 20px;
+    cursor: pointer;
+
+    >.svg-icon {
+      font-size: 12px;
+    }
+  }
+
+  .svg-icon {
+    cursor: pointer;
+
+    +.svg-icon {
+      margin-left: 20px;
+    }
+  }
+
+  .progress-bar {
+    --bc: @loading-bar;
+    --brs: 4px;
+    --c: @text-info;
+    --p: 12%;
+    --w: 60%;
+    margin: 0 12px;
+  }
+}

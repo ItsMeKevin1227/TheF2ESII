@@ -1,7 +1,13 @@
 <div class="play-item" @click="playSong">
   <div class="song-info">
     {{ songIndex }}
-    <svg-icon iconClass="heart" className="heart" />
+    <div
+       @mouseover="isHeartHover = true"
+       @mouseleave="isHeartHover = false"
+       @click.self="addFavorite(songName)">
+      <svg-icon className="heart"
+                :iconClass="heartToggle" />
+    </div>
     <p class="song-name">
       {{ songName }}
     </p>
@@ -9,10 +15,10 @@
   <div class="song-feature">
     <span>
       <svg-icon iconClass="play"
-                className="play"></svg-icon>
+                className="play" />
     </span>
     <svg-icon iconClass="more"
-              className="more"></svg-icon>
+              className="more" />
     {{ songTime }}
   </div>
 </div>

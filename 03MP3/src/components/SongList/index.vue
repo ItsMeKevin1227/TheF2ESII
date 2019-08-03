@@ -11,25 +11,32 @@ export default {
       songList: [
         {
           name: 'You Need To Calm Down',
-          time: '02:51'
+          time: '02:51',
+          artist: 'Taylor Swift'
         },
         { name: 'ME!',
-          time: '03:13'
+          time: '03:13',
+          artist: 'Taylor Swift'
         },
         { name: 'Blank Space',
-          time: '03:51'
+          time: '03:51',
+          artist: 'Taylor Swift'
         },
         { name: 'Delicate',
-          time: '03:52'
+          time: '03:52',
+          artist: 'Taylor Swift'
         },
         { name: 'I Don’t Wanna Live Forever',
-          time: '04:05'
+          time: '04:05',
+          artist: 'Taylor Swift'
         },
         { name: 'I Knew You Were Trouble.',
-          time: '03:39'
+          time: '03:39',
+          artist: 'Taylor Swift'
         },
         { name: 'Shake It Off',
-          time: '03:39'
+          time: '03:39',
+          artist: 'Taylor Swift'
         }
       ]
     }

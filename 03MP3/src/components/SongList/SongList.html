@@ -9,7 +9,7 @@
     <div v-for="(item,index) in songList">
       <img src="https://api.fnkr.net/testimg/60x60/cccccc/FFF/?text=AlbumPicture"
          alt="" />
-      <PlayItem :songName="item.name" :songIndex="index + 1" :songTime="item.time" />
+      <PlayItem :songName="item.name" :songIndex="index + 1" :songTime="item.time" :songArtist="item.artist" />
     </div>
   </div>
 </div>
