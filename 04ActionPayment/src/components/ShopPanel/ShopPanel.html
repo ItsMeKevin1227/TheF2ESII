@@ -1,0 +1,35 @@
+<div class="shop-panel">
+  <div class="shop-wrapper">
+    <p>
+      應付金額
+      <strong>${{ totalCost }}</strong>
+    </p>
+    <p>需自行至超商機台輸入代碼，產生繳費單據後至櫃檯繳費。</p>
+    <p>選擇超商</p>
+
+    <div class="shop-container">
+      <div class="shop-item shop-711"></div>
+      <div class="shop-item shop-FM"></div>
+      <div class="shop-item shop-OK"></div>
+      <div class="shop-item shop-HL"></div>
+    </div>
+
+    <div class="payment-notice">
+      <p>注意事項</p>
+      <li>
+        假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字
+      </li>
+      <li>假文字假文字假文字假文字假文字假文字</li>
+      <li>假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字</li>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="button prev-step" @click="$router.push('/OrderDetail')">
+        返回訂單
+      </div>
+      <div class="button next-step" @click="$router.push('/FinishCheckout')">
+        下一步
+      </div>
+    </div>
+  </div>
+</div>

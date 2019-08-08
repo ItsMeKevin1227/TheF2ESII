@@ -1,0 +1,48 @@
+.finish-panel {
+  background-color: rgba(@bg-secondary, 0.2);
+  padding: 20px 16px;
+
+  .finish-wrapper {
+    background-color: #fff;
+    padding: 32px 0;
+    border-radius: 10px;
+
+    h1 {
+      font-size: 2.2rem;
+      color: @text-info;
+      margin: 0 auto 16px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .order-feedback {
+      margin: 0 auto;
+      margin-bottom: 32px;
+      text-align: center;
+      line-height: 20px;
+      letter-spacing: 1px;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36%;
+        height: 50px;
+        border-radius: 2.8rem;
+        color: #fff;
+        background-color: @bg-primary;
+        font-size: 1.6rem;
+
+        &.next-step {
+          background-color: @bg-info;
+        }
+      }
+    }
+  }
+}

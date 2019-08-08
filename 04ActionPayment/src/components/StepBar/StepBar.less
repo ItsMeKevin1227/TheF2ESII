@@ -1,0 +1,29 @@
+.step-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+
+  .step-circle,
+  .step-line {
+    display: block;
+    background-color: @bg-secondary;
+
+    &.active {
+      background-color: @bg-primary;
+    }
+  }
+
+  .step-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+  }
+
+  .step-line {
+    width: 10%;
+    height: 2px;
+    flex: 1;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="atm-panel">
+  <div class="atm-wrapper">
+    <p>
+      應付金額
+      <strong>${{ totalCost }}</strong>
+    </p>
+    <p>選擇銀行</p>
+    <el-select v-model="bankSelect" placeholder="請選擇銀行">
+      <el-option
+        v-for="bank in bankList"
+        :key="bank.code"
+        :label="`${bank.code} ${bank.name}`"
+        :value="bank.name"
+      >
+      </el-option>
+    </el-select>
+
+    <div class="payment-notice">
+      <p>注意事項</p>
+      <li>
+        假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字
+      </li>
+      <li>假文字假文字假文字假文字假文字假文字</li>
+      <li>假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字</li>
+    </div>
+    <div class="button-wrapper">
+      <div class="button prev-step" @click="$router.push('/OrderDetail')">
+        返回訂單
+      </div>
+      <div class="button next-step" @click="$router.push('/FinishCheckout')">
+        下一步
+      </div>
+    </div>
+  </div>
+</div>

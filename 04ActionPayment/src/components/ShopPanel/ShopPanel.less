@@ -1,0 +1,107 @@
+.shop-panel {
+  background-color: rgba(@bg-secondary, 0.2);
+  padding: 20px 16px;
+
+  .shop-wrapper {
+    background-color: #fff;
+    padding: 16px 8px;
+    border-radius: 10px;
+
+    p {
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      strong {
+        margin: auto;
+        color: @text-info;
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+    }
+
+    .shop-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .shop-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5rem;
+        height: 5rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+
+        &+.shop-item {
+          margin-left: 20px;
+        }
+
+        &.shop-711 {
+          background-image: url('../../assets/icon_711.png');
+        }
+
+        &.shop-FM {
+          background-image: url('../../assets/icon_FM.png');
+        }
+
+        &.shop-OK {
+          background-image: url('../../assets/icon_OK.png');
+        }
+
+        &.shop-HL {
+          background-image: url('../../assets/icon_Hilife.png');
+        }
+      }
+    }
+
+    .payment-notice {
+      padding: 0 12px;
+      color: @text-placeholder;
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+
+      p {
+        margin: 4px 0;
+      }
+
+      li {
+        font-size: 1.2rem;
+
+        &+li {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42%;
+        height: 50px;
+        border-radius: 2.8rem;
+        color: #fff;
+        background-color: @bg-primary;
+        font-size: 1.6rem;
+
+        &+.button {
+          margin-left: 10px;
+        }
+
+        &.next-step {
+          background-color: @bg-info;
+        }
+      }
+    }
+  }
+}

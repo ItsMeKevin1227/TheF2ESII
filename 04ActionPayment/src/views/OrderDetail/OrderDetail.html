@@ -1,0 +1,20 @@
+<section class="order-detail">
+  <h2>確認訂單金額</h2>
+
+  <div class="order-list">
+    <p class="order-number">訂單編號 201907310111</p>
+    <OrderItem v-for="(item,index) in 2" :key="item" :itemId="index" />
+    <div class="order-total">
+      Total ${{ totalCost }}
+    </div>
+  </div>
+
+  <PaymentPanel />
+
+  <div class="payment-notice">
+    <p>注意事項</p>
+    <li>假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字</li>
+    <li>假文字假文字假文字假文字假文字假文字</li>
+    <li>假文字假文字假文字假文字假文字假文字假文字假文字假文字假文字</li>
+  </div>
+</section>

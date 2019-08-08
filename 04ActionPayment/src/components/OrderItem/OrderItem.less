@@ -1,0 +1,51 @@
+.order-item {
+  display: flex;
+  padding: 15px 0;
+  border-top: 1px solid @bg-secondary;
+
+  .thumb {
+    background-image: url('https://api.fnkr.net/testimg/60x60/cccccc/FFF/?text=CatPicture');
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  +.order-item {
+    border-bottom: 1px solid @bg-secondary;
+  }
+
+  .item-information {
+    margin-left: 16px;
+  }
+
+  .item-name {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .item-detail {
+    font-size: 1rem;
+    color: @text-placeholder;
+    margin-bottom: 8px;
+  }
+
+  .el-input-number {
+    width: 83px;
+    height: 22px;
+    line-height: 22px;
+    margin-right: 12px;
+
+    .el-input-number__decrease,
+    .el-input-number__increase {
+      width: 22px;
+      height: 20px;
+    }
+
+    .el-input__inner {
+      height: 22px;
+      line-height: 22px;
+      padding: 0 22px;
+    }
+  }
+}

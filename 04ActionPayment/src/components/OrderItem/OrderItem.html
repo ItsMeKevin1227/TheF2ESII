@@ -1,0 +1,18 @@
+<div class="order-item">
+  <div class="thumb"></div>
+  <div class="item-information">
+    <div class="item-name">{{ itemName }}</div>
+    <div class="item-detail">
+      {{ itemDescription }}
+    </div>
+    <div class="item-cost">
+      <el-input-number
+        v-model="amount"
+        @change="amountChange"
+        :min="1"
+        :max="10"
+        label="描述文字" />
+        $ {{ itemMoney }}
+    </div>
+  </div>
+</div>
